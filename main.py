@@ -14,14 +14,14 @@ Define a Pydantic model
 
 
 class Item(BaseModel):
-    Pregnancies: int
-    Glucose: int
-    BloodPressure: int
-    SkinThickness: int
-    Insulin: int
-    BMI: float
-    DiabetesPedigreeFunction: float
-    Age: int
+    pregnancies: int
+    glucose: int
+    blood_pressure: int
+    skin_thickness: int
+    insulin: int
+    bmi: float
+    diabetes_pedigree_function: float
+    age: int
 
 
 loaded_model = pickle.load(open("trained_model.sav", "rb"))
@@ -48,14 +48,14 @@ def read_root():
 @app.post('/')
 def create_item(item: Item):
     features = [
-        item.Pregnancies,
-        item.Glucose,
-        item.BloodPressure,
-        item.SkinThickness,
-        item.Insulin,
-        item.BMI,
-        item.DiabetesPedigreeFunction,
-        item.Age
+        item.pregnancies,
+        item.glucose,
+        item.blood_pressure,
+        item.skin_thickness,
+        item.insulin,
+        item.bmi,
+        item.diabetes_pedigree_function,
+        item.age
     ]
     diagnosis = diabetes_prediction(features)
     return {"result": diagnosis}

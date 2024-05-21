@@ -32,3 +32,8 @@
     "DiabetesPedigreeFunction": 0.431,
     "Age": 24
 }
+
+# RUN Command
+```js
+uvicorn main:app --reload
+```

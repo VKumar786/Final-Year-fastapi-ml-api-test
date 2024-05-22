@@ -21,10 +21,10 @@ app.add_middleware(
 # Define a Pydantic model
 class Item(BaseModel):
     pregnancies: int
-    glucose: int
-    blood_pressure: int
-    skin_thickness: int
-    insulin: int
+    glucose: float
+    blood_pressure: float
+    skin_thickness: float
+    insulin: float
     bmi: float
     diabetes_pedigree_function: float
     age: int
